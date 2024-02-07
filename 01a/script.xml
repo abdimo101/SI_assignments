@@ -1,0 +1,8 @@
+<script>
+    <name>Abdi</name>
+    <age>24</age>
+    <hobbies>
+        <hobby>coding</hobby>
+        <hobby>gaming</hobby>
+    </hobbies>
+</script>
