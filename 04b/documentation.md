@@ -36,7 +36,15 @@ Switch to SQL mode <br>
 `SHOW databases; ` <br>
 `USE hms_simple; ` <br>
 `SHOW tables; ` <br>
-
-`SELECT * FROM patient; ` # Only Doctor <br>
-`SELECT * FROM hospital ` <br>
-`INSERT INTO patient (first_name, last_name, contact_number, cpr, address, hospital_id) VALUES (<first_name>, <last_name>, <contact_number>, <cpr>, <address>, <hospital_id>); ` # Only Doctor
+See patients <br>
+`SELECT * FROM patient; ` <br>
+See hospitals <br>
+`SELECT * FROM hospital; ` <br>
+Create hospitals <br>
+`INSERT INTO hospital (name) VALUES (<name>); ` # Only Hospital director <br>
+Create patients <br>
+`INSERT INTO patient (first_name, last_name, contact_number, cpr, address, hospital_id) VALUES (<first_name>, <last_name>, <contact_number>, <cpr>, <address>, <hospital_id>); ` # Only Doctor <br>
+See doctors <br>
+`SELECT * FROM doctor; ` # Only Hospital director <br>
+Create doctors <br>
+`INSERT INTO doctor (first_name, last_name, contact_number, cpr, address, hospital_id) VALUES (<first_name>, <last_name>, <contact_number>, <cpr>, <address>, <hospital_id>); ` # Only Hospital director
