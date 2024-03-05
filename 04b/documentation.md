@@ -2,7 +2,7 @@
 
 ## Database host
 
-Host url: Check discord
+Host url: Check discord <br>
 Port: 3307
 
 ## Database users
