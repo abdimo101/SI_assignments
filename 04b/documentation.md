@@ -31,7 +31,7 @@ Switch to SQL mode <br>
 
 `mysql -u<username> -p<password> -P<port> -h<host_url> `
 
-## Queries
+## Query Examples
 
 `SHOW databases; ` <br>
 `USE hms_simple; ` <br>
