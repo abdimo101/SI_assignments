@@ -2,7 +2,7 @@
 
 ## Database host
 
-Host url: 172.104.203.246
+Host url: Check discord <br>
 Port: 3307
 
 ## Database users
