@@ -1,0 +1,2 @@
+1. There is a grammatical error in line 15.
+2. Specify which table/collection Guest can read.
