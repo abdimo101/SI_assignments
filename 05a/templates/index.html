@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhook Registration</title>
+</head>
+<body>
+    <h1>Webhook Registration</h1>
+    
+    <form id="webhookForm1">
+        <label for="url1">URL:</label>
+        <input type="text" id="url1" name="url" required><br><br>
+        
+        <label for="eventType1">Event Type:</label>
+        <select id="eventType1" name="eventType" required>
+            <option value="">Select Event Type</option>
+            <option value="patient_registered">Patient registered</option>
+            <option value="appointment_scheduled">Appointment scheduled</option>
+            <option value="treatment_received">Treatment received</option>
+            <option value="patient_discharged">Patient discharged</option>
+        </select><br><br>
+        
+        <button type="submit">Register</button>
+    </form>
+
+    <form id="webhookForm2">
+        <label for="url2">URL:</label>
+        <input type="text" id="url2" name="url" required><br><br>
+        
+        <label for="eventType2">Event Type:</label>
+        <select id="eventType2" name="eventType" required>
+            <option value="">Select Event Type</option>
+            <option value="patient_registered">Patient registered</option>
+            <option value="appointment_scheduled">Appointment scheduled</option>
+            <option value="treatment_received">Treatment received</option>
+            <option value="patient_discharged">Patient discharged</option>
+        </select><br><br>
+        
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        document.getElementById('webhookForm1').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            
+            fetch('/webhooksregister', {
+                method: 'POST',
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Webhook registration successful!');
+                } else {
+                    alert('Webhook registration failed: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+        });
+
+        document.getElementById('webhookForm2').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            
+            fetch('/webhooksregister', {
+                method: 'POST',
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Webhook registration successful!');
+                } else {
+                    alert('Webhook registration failed: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+        });
+    </script>
+</body>
+</html>
