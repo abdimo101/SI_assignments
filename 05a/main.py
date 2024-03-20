@@ -49,8 +49,7 @@ def unregister_webhook():
 def ping_webhooks():
     for endpoint in registered_endpoints:
         print(f"Calling webhook at {endpoint['url']} for event type {endpoint['eventType']}")
-    return jsonify({'success': True})
-
+        return jsonify(f"Calling webhook at {endpoint['url']} for event type {endpoint['eventType']}")
 
 def save_endpoint_data():
     with open(endpoint_data_file, 'w') as file:
