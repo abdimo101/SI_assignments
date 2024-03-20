@@ -7,7 +7,7 @@
 **- treatment_received** <br>
 **- patient_discharged**
 
-## How to register & unregister to a webhook registration system
+## How to register & unregister a webhook to a webhook registration system
 
 **1. Install & open Postman** <br>
 **2. Create a POST request** <br>
