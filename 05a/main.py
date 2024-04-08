@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import json
-
+import requests
 app = Flask(__name__)
 
 endpoint_data_file = 'endpoint_data.json'
@@ -49,8 +49,15 @@ def unregister_webhook():
 def ping_webhooks():
     for endpoint in registered_endpoints:
         print(f"Calling webhook at {endpoint['url']} for event type {endpoint['eventType']}")
-        return jsonify(f"Calling webhook at {endpoint['url']} for event type {endpoint['eventType']}")
-
+        try:
+            response = requests.post(url=endpoint['url'], json={'message': f"Calling webhook at {endpoint['url']} for event type {endpoint['eventType']}"})
+            if response.status_code == 200:
+                print(f"Successfully pinged {endpoint['url']}")
+            else:
+                print(f"Failed to ping {endpoint['url']} with status code {response.status_code}")
+        except requests.RequestException as e:
+            print(f"Failed to ping {endpoint['url']}: {str(e)}")
+    return jsonify({'success': True})
 def save_endpoint_data():
     with open(endpoint_data_file, 'w') as file:
         json.dump(registered_endpoints, file, indent=2)
