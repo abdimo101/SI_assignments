@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "06a"
+version = "0.1.0"
+description = ""
+authors = ["Abdi Abdulle <cph-aa394@cphbusiness.dk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^3.0.3"
+flask-socketio = "^5.3.6"
+flask-cors = "^4.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
