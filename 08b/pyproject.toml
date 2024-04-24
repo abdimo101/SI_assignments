@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "08b"
+version = "0.1.0"
+description = ""
+authors = ["Abdi Abdulle <cph-aa394@cphbusiness.dk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+alembic = "^1.13.1"
+sqlalchemy = "^2.0.29"
+pymysql = "^1.1.0"
+mysqlclient = "^2.2.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
