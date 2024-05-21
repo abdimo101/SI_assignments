@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "10a"
+version = "0.1.0"
+description = ""
+authors = ["Abdi Abdulle <cph-aa394@cphbusiness.dk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
+ariadne = "^0.23.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
